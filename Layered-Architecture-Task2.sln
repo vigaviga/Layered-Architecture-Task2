@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carting.API", "Layered-Architecture-Task2\Carting.API.csproj", "{45A9501A-D227-4E03-B888-A57A86DD63BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carting.Domain", "Carting.Domain\Carting.Domain.csproj", "{F55E1E88-429A-4A34-9D5C-861B58537BDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carting.DAL", "Carting.DAL\Carting.DAL.csproj", "{714AE22F-1FC8-421E-B6A3-387F5AA39FEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45A9501A-D227-4E03-B888-A57A86DD63BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45A9501A-D227-4E03-B888-A57A86DD63BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45A9501A-D227-4E03-B888-A57A86DD63BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45A9501A-D227-4E03-B888-A57A86DD63BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F55E1E88-429A-4A34-9D5C-861B58537BDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F55E1E88-429A-4A34-9D5C-861B58537BDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F55E1E88-429A-4A34-9D5C-861B58537BDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F55E1E88-429A-4A34-9D5C-861B58537BDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{714AE22F-1FC8-421E-B6A3-387F5AA39FEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{714AE22F-1FC8-421E-B6A3-387F5AA39FEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{714AE22F-1FC8-421E-B6A3-387F5AA39FEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{714AE22F-1FC8-421E-B6A3-387F5AA39FEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14412539-6D5C-4748-9B21-269F2F70556C}
+	EndGlobalSection
+EndGlobal
