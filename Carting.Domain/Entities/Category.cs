@@ -1,9 +1,29 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Carting.Domain.Entities
+﻿namespace Carting.Domain.Entities
 {
-    public record Category(int Id, 
-                           [Required(ErrorMessage = "Category name is required.")][MaxLength(50)] string Name, 
-                           string ImageUrl,
-                           Category ParentCategory);
+    public class Category
+    {
+        public uint Id { get; set; }
+
+        private string _name;
+        public string Name 
+        {
+            get => _name;
+            set {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentNullException(nameof(value));
+                }
+
+                if (value.Length > 50)
+                {
+                    throw new ArgumentException(ExceptionMessages.CategoryNameMustBeLessThan50);
+                }
+                _name = value;
+            }
+        }
+
+        public string? ImageUrl { get; set; }
+
+        public int? ParentCategoryId { get; set; }
+    }
 }
