@@ -13,6 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Application", "Cata
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{585FF2A0-5C92-4591-99BC-481DE2769A78}"
 	ProjectSection(SolutionItems) = preProject
+		azure-pipelines-destroy.yml = azure-pipelines-destroy.yml
 		azure-pipelines.yml = azure-pipelines.yml
 	EndProjectSection
 EndProject
