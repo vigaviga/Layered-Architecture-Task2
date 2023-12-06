@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carting.API", "Carting.API\Carting.API.csproj", "{45A9501A-D227-4E03-B888-A57A86DD63BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.API", "Catalog.API\Catalog.API.csproj", "{45A9501A-D227-4E03-B888-A57A86DD63BE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Domain", "Carting.Domain\Catalog.Domain.csproj", "{F55E1E88-429A-4A34-9D5C-861B58537BDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Domain", "Catalog.Domain\Catalog.Domain.csproj", "{F55E1E88-429A-4A34-9D5C-861B58537BDB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.DataAccessLayer", "Carting.DAL\Catalog.DataAccessLayer.csproj", "{714AE22F-1FC8-421E-B6A3-387F5AA39FEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.DataAccessLayer", "Catalog.DAL\Catalog.DataAccessLayer.csproj", "{714AE22F-1FC8-421E-B6A3-387F5AA39FEC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Application", "Catalog.Application\Catalog.Application.csproj", "{A16AB501-9E41-45C1-9885-627146869EC5}"
 EndProject

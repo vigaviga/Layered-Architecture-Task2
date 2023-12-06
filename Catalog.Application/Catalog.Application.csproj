@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Carting.DAL\Catalog.DataAccessLayer.csproj" />
-    <ProjectReference Include="..\Carting.Domain\Catalog.Domain.csproj" />
+    <ProjectReference Include="..\Catalog.DAL\Catalog.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\Catalog.Domain\Catalog.Domain.csproj" />
   </ItemGroup>
 
 </Project>

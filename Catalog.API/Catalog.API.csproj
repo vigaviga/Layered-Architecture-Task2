@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Carting.DAL\Catalog.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\Catalog.DAL\Catalog.DataAccessLayer.csproj" />
     <ProjectReference Include="..\Catalog.Application\Catalog.Application.csproj" />
   </ItemGroup>
 
