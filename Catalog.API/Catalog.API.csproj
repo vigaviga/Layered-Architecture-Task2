@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Catalog.DAL\Catalog.DataAccessLayer.csproj" />
     <ProjectReference Include="..\Catalog.Application\Catalog.Application.csproj" />
+    <ProjectReference Include="..\Catalog.DataAccessLayer.EFCore\Catalog.DataAccessLayer.EFCore.csproj" />
   </ItemGroup>
 
 </Project>
