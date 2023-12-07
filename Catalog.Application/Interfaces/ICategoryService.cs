@@ -8,6 +8,6 @@ namespace Catalog.Application.Interfaces
         public Task<IEnumerable<Category>> GetAllCategories();
         public Task Post(Category category);
         public Task Put(Category category);
-        public Task Delete(Category category);
+        public Task Delete(int categoryId);
     }
 }

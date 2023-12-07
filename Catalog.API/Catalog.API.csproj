@@ -19,6 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Catalog.Application\Catalog.Application.csproj" />
     <ProjectReference Include="..\Catalog.DataAccessLayer.EFCore\Catalog.DataAccessLayer.EFCore.csproj" />
+    <ProjectReference Include="..\Catalog.Shared\Catalog.Shared.csproj" />
   </ItemGroup>
 
 </Project>

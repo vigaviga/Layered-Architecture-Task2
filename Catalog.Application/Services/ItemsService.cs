@@ -3,21 +3,22 @@ using Carting.Domain.Entities;
 using Catalog.Application.Interfaces;
 using Catalog.DataAccessLayer;
 using Catalog.DataAccessLayer.Entities;
+using Catalog.Shared.Models;
 
 namespace Catalog.Application.Services
 {
     public class ItemsService : IItemsService
     {
-        private readonly IRepository<ItemDALEntity> _repository;
+        private readonly IItemsRepository _repository;
         private readonly IMapper _mapper;
-        public ItemsService(IRepository<ItemDALEntity> repository, IMapper mapper)
+        public ItemsService(IItemsRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
         }
-        public async Task Delete(Item category)
+        public async Task Delete(int itemId)
         {
-            var itemDAL = _mapper.Map<ItemDALEntity>(category);
+            var itemDAL = await _repository.Get(itemId);
             await _repository.Delete(itemDAL);
         }
 
@@ -32,6 +33,13 @@ namespace Catalog.Application.Services
         {
             var itemDAL = await _repository.Get(id);
             return _mapper.Map<Item>(itemDAL);
+        }
+
+        public async Task<List<Item>> GetItems(ItemsFilter itemsFilter)
+        {
+            var itemsDAL = await _repository.GetItems(itemsFilter);
+            var items = itemsDAL.Select(dal => _mapper.Map<Item>(dal)).ToList();
+            return items;
         }
 
         public async Task Post(Item category)

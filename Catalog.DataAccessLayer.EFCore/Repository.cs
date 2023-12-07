@@ -1,10 +1,5 @@
 ﻿using Catalog.DataAccessLayer.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Catalog.DataAccessLayer.EFCore
 {
@@ -19,7 +14,7 @@ namespace Catalog.DataAccessLayer.EFCore
 
         public async Task Delete(TEntity entity)
         {
-            _context.Remove(entity);
+            _context.Remove<TEntity>(entity);
             await _context.SaveChangesAsync();
         }
 

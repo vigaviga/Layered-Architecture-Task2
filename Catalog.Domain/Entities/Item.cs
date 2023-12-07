@@ -1,11 +1,10 @@
-﻿using System.Reflection.Metadata.Ecma335;
+﻿using Catalog.Domain.Entities;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Carting.Domain.Entities
 {
-    public class Item
+    public class Item : Base
     {
-        public uint Id { get; set; }
-
         private string _name;
         public string Name
         {

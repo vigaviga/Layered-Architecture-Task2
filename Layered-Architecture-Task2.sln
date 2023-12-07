@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Application", "Cata
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.DataAccessLayer.EFCore", "Catalog.DataAccessLayer.EFCore\Catalog.DataAccessLayer.EFCore.csproj", "{00FB43B1-161A-48C5-BE9A-5D2CFB49559D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Shared", "Catalog.Shared\Catalog.Shared.csproj", "{DDBA7FCE-626A-4611-B1FA-F60574A74358}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{00FB43B1-161A-48C5-BE9A-5D2CFB49559D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00FB43B1-161A-48C5-BE9A-5D2CFB49559D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00FB43B1-161A-48C5-BE9A-5D2CFB49559D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDBA7FCE-626A-4611-B1FA-F60574A74358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDBA7FCE-626A-4611-B1FA-F60574A74358}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDBA7FCE-626A-4611-B1FA-F60574A74358}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDBA7FCE-626A-4611-B1FA-F60574A74358}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
