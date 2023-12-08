@@ -15,7 +15,7 @@ namespace Catalog.DataAccessLayer.EFCore
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
             services.AddScoped<IRepository<CategoryDALEntity>, Repository<CategoryDALEntity>>();
-            services.AddScoped<IRepository<ItemDALEntity>, Repository<ItemDALEntity>>();
+            services.AddScoped<IItemsRepository, ItemsRepository>();
         }
     }
 }

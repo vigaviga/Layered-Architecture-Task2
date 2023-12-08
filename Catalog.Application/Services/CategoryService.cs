@@ -15,9 +15,9 @@ namespace Catalog.Application.Services
             _categoryDALEntityRepository = categoryDALEntityRepository;
             _mapper = mapper;
         }
-        public async Task Delete(Category category)
+        public async Task Delete(int categoryId)
         {
-            var categoryDAL = _mapper.Map<CategoryDALEntity>(category);
+            var categoryDAL = await _categoryDALEntityRepository.Get(categoryId);
             await _categoryDALEntityRepository.Delete(categoryDAL);
         }
 

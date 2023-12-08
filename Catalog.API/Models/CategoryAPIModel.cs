@@ -1,16 +1,12 @@
 ﻿using Carting.Domain.Entities;
+using Layered_Architecture_Task2.Models;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 
 namespace Layered_Architecture_Task2.RequestModels
 {
-    public class CategoryAPIModel
+    public class CategoryAPIModel : BaseAPIModel
     {
-        public int? Id { get; set; }
-        [Required]
-        [MaxLength(50)]
-        public string Name { get; set; }
-
         public string? ImageUrl { get; set; }
         public int? ParentCategoryId { get; set; }
     }

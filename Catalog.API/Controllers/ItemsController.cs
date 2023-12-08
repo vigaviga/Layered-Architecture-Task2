@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Carting.Domain.Entities;
 using Catalog.Application.Interfaces;
+using Catalog.Shared.Models;
+using Layered_Architecture_Task2.Models;
 using Layered_Architecture_Task2.RequestModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -28,19 +30,18 @@ namespace Layered_Architecture_Task2.Controllers
         }
 
         [HttpGet]
-        [Route("Items/{id}")]
-        public async Task<IActionResult> Get([FromQuery] int id)
+        [Route("{id}")]
+        public async Task<IActionResult> Get([FromRoute] int id)
         {
-            var category = await _itemsService.GetItem(id);
-            if (category == null) return NotFound(id);
-            return Ok(category);
+            var item = await _itemsService.GetItem(id);
+            if (item == null) return NotFound(id);
+            return Ok(new ServiceResponse<Item>(item));
         }
 
         [HttpGet]
-        [Route("Items")]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> Get([FromQuery] ItemsFilter itemFilters)
         {
-            var categories = await _itemsService.GetAllItems();
+            var categories = await _itemsService.GetItems(itemFilters);
             return Ok(categories);
         }
 
@@ -49,6 +50,14 @@ namespace Layered_Architecture_Task2.Controllers
         {
             var item = _mapper.Map<Item>(itemRequest);
             await _itemsService.Put(item);
+            return Ok();
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> Delete([FromRoute] int id)
+        {
+            await _itemsService.Delete(id);
             return Ok();
         }
     }

@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Catalog.DAL\Catalog.DataAccessLayer.csproj" />
     <ProjectReference Include="..\Catalog.Domain\Catalog.Domain.csproj" />
+    <ProjectReference Include="..\Catalog.Shared\Catalog.Shared.csproj" />
   </ItemGroup>
 
 </Project>
