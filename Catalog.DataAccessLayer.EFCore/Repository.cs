@@ -1,7 +1,7 @@
 ﻿using Catalog.DataAccessLayer.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Catalog.DataAccessLayer
+namespace Catalog.DataAccessLayer.EFCore
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseDALEntity
     {
@@ -14,7 +14,7 @@ namespace Catalog.DataAccessLayer
 
         public async Task Delete(TEntity entity)
         {
-            _context.Remove(entity);
+            _context.Remove<TEntity>(entity);
             await _context.SaveChangesAsync();
         }
 

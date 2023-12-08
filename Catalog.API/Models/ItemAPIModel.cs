@@ -1,14 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Layered_Architecture_Task2.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace Layered_Architecture_Task2.RequestModels
 {
-    public class ItemAPIModel
+    public class ItemAPIModel : BaseAPIModel
     {
-        public int? Id { get; set; }
-        
-        [Required]
-        [MaxLength(50)]
-        public string Name { get; set; }
         public string ImageUrl { get; set; }
 
         public string Description { get; set; }

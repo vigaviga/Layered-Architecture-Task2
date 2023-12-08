@@ -1,6 +1,6 @@
-using Catalog.DataAccessLayer;
 using Catalog.Application;
 using Layered_Architecture_Task2;
+using Catalog.DataAccessLayer.EFCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddRepositoryServices();
+builder.Services.AddEfCoreDAL();
 builder.Services.AddApplicationLayerServices();
 builder.Services.AddAutoMapper(typeof(ApiDomainMappingProfile));
 var app = builder.Build();

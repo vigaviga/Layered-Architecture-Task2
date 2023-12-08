@@ -1,13 +1,14 @@
 ﻿using AutoMapper;
 using Carting.Domain.Entities;
 using Catalog.Application.Interfaces;
+using Layered_Architecture_Task2.Models;
 using Layered_Architecture_Task2.RequestModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Layered_Architecture_Task2.Controllers
 {
     [ApiController]
-    [Route("Category")]
+    [Route("Categories")]
     public class CategoriesController : ControllerBase
     {
         private readonly ICategoriesService _categoriesService;
@@ -28,17 +29,16 @@ namespace Layered_Architecture_Task2.Controllers
         }
 
         [HttpGet]
-        [Route("Categories/{id}")]
-        public async Task<IActionResult> Get([FromQuery] int id)
+        [Route("{id}")]
+        public async Task<IActionResult> Get([FromRoute] int id)
         {
             var category = await _categoriesService.GetCategory(id);
             if (category == null) return NotFound(id);
-            return Ok(category);
+            return Ok(new ServiceResponse<Category>(category));
         }
 
         [HttpGet]
-        [Route("Categories")]
-        public async Task<IActionResult> GetAll() 
+        public async Task<IActionResult> GetAll()
         {
             var categories = await _categoriesService.GetAllCategories();
             return Ok(categories);
@@ -49,6 +49,14 @@ namespace Layered_Architecture_Task2.Controllers
         {
             var category = _mapper.Map<Category>(categoryRequest);
             await _categoriesService.Put(category);
+            return Ok();
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> Delete([FromRoute] int id)
+        {
+            await _categoriesService.Delete(id);
             return Ok();
         }
     }

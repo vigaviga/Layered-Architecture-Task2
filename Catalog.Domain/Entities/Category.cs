@@ -1,8 +1,9 @@
-﻿namespace Carting.Domain.Entities
+﻿using Catalog.Domain.Entities;
+
+namespace Carting.Domain.Entities
 {
-    public class Category
+    public class Category : Base
     {
-        public uint Id { get; set; }
 
         private string _name;
         public string Name 

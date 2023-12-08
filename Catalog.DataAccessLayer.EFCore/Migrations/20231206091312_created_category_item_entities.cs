@@ -2,9 +2,9 @@
 
 #nullable disable
 
-namespace Catalog.DataAccessLayer.Migrations
+namespace Catalog.DataAccessLayer.EFCore.Migrations
 {
-    public partial class create_categories_and_items : Migration
+    public partial class created_category_item_entities : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

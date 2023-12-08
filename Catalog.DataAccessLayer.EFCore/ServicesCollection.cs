@@ -4,19 +4,18 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Catalog.DataAccessLayer
+namespace Catalog.DataAccessLayer.EFCore
 {
     public static class ServicesCollection
     {
-        public static void AddRepositoryServices(this IServiceCollection services)
+        public static void AddEfCoreDAL(this IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
             services.AddScoped<IRepository<CategoryDALEntity>, Repository<CategoryDALEntity>>();
-            services.AddScoped<IRepository<ItemDALEntity>, Repository<ItemDALEntity>>();
+            services.AddScoped<IItemsRepository, ItemsRepository>();
         }
     }
 }
