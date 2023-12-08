@@ -16,13 +16,13 @@ namespace Catalog.DataAccessLayer.EFCore
             _context = context;
         }
 
-        public Task<List<ItemDALEntity>> GetItems(ItemsFilter itemsFilter)
+        public async Task<List<ItemDALEntity>> GetItems(ItemsFilter itemsFilter)
         {
             var itemsDAL = _context.Items.Where(i => i.CategoryDALEntityId == itemsFilter.CategoryId)
                                          .Skip(itemsFilter.PageSize * itemsFilter.Start)
                                          .Take(itemsFilter.PageSize)
                                          .ToList();
-            return Task.FromResult(itemsDAL);
+            return itemsDAL;
         }
     }
 }
