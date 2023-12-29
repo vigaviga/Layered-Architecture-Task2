@@ -13,7 +13,11 @@ namespace Catalog.DataAccessLayer.EFCore
     {
         public static void AddEfCoreDAL(this IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
+            services.AddDbContext<ApplicationDbContext>(options =>
+            {
+                options.UseSqlServer("name=ConnectionStrings:DefaultConnection");
+                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+            });
             services.AddScoped<IRepository<CategoryDALEntity>, Repository<CategoryDALEntity>>();
             services.AddScoped<IItemsRepository, ItemsRepository>();
         }
