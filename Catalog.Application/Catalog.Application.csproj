@@ -8,12 +8,14 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Catalog.DAL\Catalog.DataAccessLayer.csproj" />
     <ProjectReference Include="..\Catalog.Domain\Catalog.Domain.csproj" />
     <ProjectReference Include="..\Catalog.Shared\Catalog.Shared.csproj" />
+    <ProjectReference Include="..\Kafka.Client\Catalog.Kafka.Client.csproj" />
   </ItemGroup>
 
 </Project>
