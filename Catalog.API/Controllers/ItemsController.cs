@@ -4,6 +4,7 @@ using Catalog.Application.Interfaces;
 using Catalog.Shared.Models;
 using Layered_Architecture_Task2.Models;
 using Layered_Architecture_Task2.RequestModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Layered_Architecture_Task2.Controllers
@@ -22,6 +23,7 @@ namespace Layered_Architecture_Task2.Controllers
         }
 
         [HttpPost]
+        [Authorize(Policy = "ManagerOnly")]
         public async Task<IActionResult> Post(ItemAPIModel itemRequest)
         {
             var item = _mapper.Map<Item>(itemRequest);
@@ -46,6 +48,7 @@ namespace Layered_Architecture_Task2.Controllers
         }
 
         [HttpPut]
+        [Authorize(Policy = "ManagerOnly")]
         public async Task<IActionResult> Put(ItemAPIModel itemRequest)
         {
             var item = _mapper.Map<Item>(itemRequest);
@@ -55,6 +58,7 @@ namespace Layered_Architecture_Task2.Controllers
 
         [HttpDelete]
         [Route("{id}")]
+        [Authorize(Policy = "ManagerOnly")]
         public async Task<IActionResult> Delete([FromRoute] int id)
         {
             await _itemsService.Delete(id);
