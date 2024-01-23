@@ -4,6 +4,8 @@ using Catalog.DataAccessLayer.EFCore;
 using Confluent.Kafka;
 using Confluent.SchemaRegistry;
 using Catalog.Kafka.Client;
+using Microsoft.IdentityModel.Tokens;
+using IdentityModel;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +21,34 @@ builder.Services.Configure<SchemaRegistryConfig>(builder.Configuration.GetSectio
 builder.Services.AddApplicationLayerServices();
 builder.Services.AddKafkaServices();
 
+builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer("Bearer", options =>
+    {
+        options.Authority = "https://localhost:5001";
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidAudience = "https://localhost:5001/resources",
+            ValidateIssuer = true,
+            ClockSkew = TimeSpan.Zero,
+        };
+    });
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("ApiScope", policy =>
+    {
+        policy.RequireAuthenticatedUser();
+        policy.RequireClaim("scope", "api1");
+    });
+
+    options.AddPolicy("ManagerOnly", policy =>
+    {
+        policy.RequireAuthenticatedUser();
+        policy.RequireClaim("scope", "verification");
+        policy.RequireRole("manager");
+    });
+});
+
 builder.Services.AddAutoMapper(typeof(ApiDomainMappingProfile));
 var app = builder.Build();
 
@@ -29,8 +59,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllers();
+app.MapControllers().RequireAuthorization();
 
 app.Run();
