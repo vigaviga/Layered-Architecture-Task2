@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.DataAccessLayer.EFC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Shared", "Catalog.Shared\Catalog.Shared.csproj", "{DDBA7FCE-626A-4611-B1FA-F60574A74358}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Kafka.Client", "Kafka.Client\Catalog.Kafka.Client.csproj", "{5725DCE6-75BB-4EA0-B197-2F6FFBE26118}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.Kafka.Client", "Kafka.Client\Catalog.Kafka.Client.csproj", "{5725DCE6-75BB-4EA0-B197-2F6FFBE26118}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.UnitTests", "Catalog.UnitTests\Catalog.UnitTests.csproj", "{AC51FD01-D5F8-4610-AACF-CF272293FA17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{5725DCE6-75BB-4EA0-B197-2F6FFBE26118}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5725DCE6-75BB-4EA0-B197-2F6FFBE26118}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5725DCE6-75BB-4EA0-B197-2F6FFBE26118}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC51FD01-D5F8-4610-AACF-CF272293FA17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC51FD01-D5F8-4610-AACF-CF272293FA17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC51FD01-D5F8-4610-AACF-CF272293FA17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC51FD01-D5F8-4610-AACF-CF272293FA17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
