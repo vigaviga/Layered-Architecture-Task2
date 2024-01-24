@@ -22,7 +22,7 @@ namespace Catalog.UnitTests
         public void SampleTest2()
         {
             //Arrange
-            var s1 = "string1";
+            var s1 = "string1a";
             var s2 = "string1";
 
             //Act
