@@ -6,6 +6,7 @@ namespace Catalog.Application
 {
     public class RepoDomainMappingProfile : Profile
     {
+        /test
         public RepoDomainMappingProfile()
         {
             CreateMap<CategoryDALEntity, Category>();
